@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script> 
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="grid-section">
+      <div id="main-grid-item"> 
+        <div id="user">
+          <img src="images/image-jeremy.png" alt="user-profile-picture" id="profile-picture">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1> 
+        </div> 
+        <div id="timeframe-section">
+          <input type="radio" name="timeframe" id="daily-checkbox" class="timeframe-radio" aria-label="click to toggle daily-values">  
+          <input type="radio" name="timeframe" id="weekly-checkbox" class="timeframe-radio" aria-label="click to toggle weekly-values">
+          <input type="radio" name="timeframe" id="monthly-checkbox" class="timeframe-radio" aria-label="click to toggle monthly-values">
+        </div>
+      </div> 
+      <div id="work-section" class="grid-item">
+        <div class="grid-item-main">
+          <div class="grid-item-header">
+            <p class="section-title">Work</p>
+            <button class="section-menu-button" aria-label="section-menu-button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+            </button> 
+          </div> 
+          <p class="current-value" id="work-current">32hrs</p>
+          <p class="previous-value-section"><span class="preceding-text">Last Week</span> - <span class="previous-value" id="work-previous">36hrs</span></p>
+        </div>
+      </div>
+      <div id="play-section" class="grid-item">
+        <div class="grid-item-main"> 
+          <div class="grid-item-header">
+            <p class="section-title">Play</p> 
+            <button class="section-menu-button" aria-label="section-menu-button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <p class="current-value" id="play-current">10hrs</p>
+          <p class="previous-value-section"><span class="preceding-text">Last Week</span> - <span class="previous-value" id="play-previous">8hrs</span></p>
+        </div>
+      </div>
+      <div id="study-section" class="grid-item">
+        <div class="grid-item-main">
+          <div class="grid-item-header">
+            <p class="section-title">Study</p>
+            <button class="section-menu-button" aria-label="section-menu-button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <p class="current-value" id="study-current">4hrs</p>
+          <p class="previous-value-section"><span class="preceding-text">Last Week</span> - <span class="previous-value" id="study-previous">7hrs</span></p>
+        </div>
+      </div>
+      <div id="exercise-section" class="grid-item">
+        <div class="grid-item-main">
+          <div class="grid-item-header">
+            <p class="section-title">Exercise</p>
+            <button class="section-menu-button" aria-label="section-menu-button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <p class="current-value" id="exercise-current">4hrs</p>
+          <p class="previous-value-section"><span class="preceding-text">Last Week</span> - <span class="previous-value" id="exercise-previous">5hrs</span></p>
+        </div>
+      </div>
+      <div id="social-section" class="grid-item">
+        <div class="grid-item-main">
+          <div class="grid-item-header">
+            <p class="section-title">Social</p>
+            <button class="section-menu-button" aria-label="section-menu-button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <p class="current-value" id="social-current">5hrs</p>
+          <p class="previous-value-section"><span class="preceding-text">Last Week</span> - <span class="previous-value" id="social-previous">10hrs</span></p>
+        </div>
+      </div>
+      <div id="self-care-section" class="grid-item"> 
+        <div class="grid-item-main">
+          <div class="grid-item-header">
+            <p class="section-title">Self Care</p>
+            <button class="section-menu-button" aria-label="section-menu-button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+            </button>
+          </div> 
+          <p class="current-value" id="self-care-current">2hrs</p>
+          <p class="previous-value-section"><span class="preceding-text">Last Week</span> - <span class="previous-value" id="self-care-previous">2hrs</span></p>
+        </div> 
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">shikoto</a>.
+    </div> 
+  </footer>
+</body>
+</html>
